@@ -7,59 +7,86 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
-.container {
-  background: lightblue;
-  padding: 10px;
-  border-radius: 5px;
+h3,
+p {
+  font-family: "Poppins", sans-serif !important;
 }
 
-.arcodding__container {
-  width: 400px;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 1px solid black;
-  margin-bottom: 5px;
+h3 {
+  font-weight: 500;
+  order: -1;
+  font-size: 1.2em !important;
 }
 
-.arcodding__container:last-child {
-  margin-bottom: 0px;
+.ui-accordion {
+  border: 2px solid rgba(0, 0, 0, 0.3) !important;
+  padding: 6px !important;
+  border-radius: 4px;
 }
 
-header {
-  padding: 10px;
-  display: flex;
+.ui-accordion-header {
+  padding: 10px !important;
+  display: flex !important;
   justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease-in-out;
 }
 
-.desc {
+.ui-accordion-header,
+.ui-accordion-content {
+  min-width: 400px !important;
+  max-width: 400px !important;
   width: 100%;
-  padding: 0px 10px 10px;
-  display: none;
+}
+
+.ui-accordion-content p {
+  margin-left: -15px;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(20px) !important;
+  transition: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.ui-accordion-content-active p {
+  transform: translateY(0px) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 @media (max-width: 576px) {
-  body {
-    font-size: 14px;
+  h3 {
+    font-size: 16px !important;
   }
 
-  .arcodding__container {
-    width: 300px;
+  p {
+    font-size: 14px !important;
+  }
+
+  .ui-accordion-header,
+  .ui-accordion-content {
+    min-width: 300px !important;
+    max-width: 300px !important;
   }
 }
 
 @media (max-width: 360px) {
-  body {
-    font-size: 12px;
+  h3 {
+    font-size: 14px !important;
+  }
+  p {
+    font-size: 12px !important;
   }
 
-  .arcodding__container {
-    width: 250px;
+  .ui-accordion-header,
+  .ui-accordion-content {
+    min-width: 250px !important;
+    max-width: 250px !important;
   }
 }
